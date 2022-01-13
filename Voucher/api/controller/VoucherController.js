@@ -3,18 +3,14 @@
 const util = require('util')
 const mongodb = require('mongodb');
 const mongoosedb = require("mongoose");
-//const client = require('./../db')
-const client = require('./../mongoosedb')
+const mongoose = require('../mongoosedb')
+let eventModel = require("../model/events");
+const { log } = require('console');
 
 module.exports = {
-    getVoucher: (req, res) => {
-        const collection = client.db("voucher_db").collection("events");
-        collection.find({}).toArray(function(err, result) {
-            if (err) {
-                throw err;
-            }
-            res.json(result)      
-        });
-    }
+    generateVoucher: (req, res) => {
+        // learning syntax get body elements on json
+        res.json("good");
+    },
 }
 

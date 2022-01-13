@@ -1,17 +1,15 @@
 const mongoose = require("mongoose");
 
 const schema = new mongoose.Schema({
-  id: {
+  code_event: {
     type: String,
   },
   max_quantity: {
-    type: String,
+    type: Number,
   },
   cur_quantity: {
-    type: String,
+    type: Number,
   },
 });
 
-const events = mongoose.model("events", schema, "events");
-
-module.exports = events;
+module.exports = mongoose.model("Events", schema);
